@@ -34,9 +34,10 @@ const cart = [
 ]
 
 //CODE HERE
-
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((acc, cur) => {
+    return acc + cur.price
+}, 0)
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,9 +55,10 @@ const cart = [
 */
 
 //CODE HERE
-
-
-
+function calcFinalPrice(cartTotal, couponValue, tax) {
+   return cartTotal + cartTotal * tax - couponValue
+}
+console.log(calcFinalPrice(15, 4, 0.06))
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -79,6 +81,10 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    name: (string), need to know the name of the customer
+    address: (string), need to know where to deliver food
+    phone: (string), need to contact if something happens
+    wantsEmails: (boolean), whether or not they want deals emailed
 
 */
 
@@ -88,3 +94,9 @@ const cart = [
 */
 
 //CODE HERE
+let custObj ={
+    name: 'Will',
+    address: 'Pointe Drive',
+    phone: '801-555-5555',
+    wantsEmails: false,
+}
