@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+const pizza = {
+    name: 'Pizza Pizza',
+    price: 5,
+    category: 'Entree',
+    popularity: 8,
+    rating: 9,
+    tags: ['Gluten-free', 'Kids', 'Dairy-free'],
+};
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -63,8 +70,9 @@
 */
 
 //CODE HERE
-
-
+let {price} = pizza;
+pizza.price = 6;
+console.log(pizza)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +81,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza;
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +97,16 @@
 */
 
 //CODE HERE
-
+const foodArr = [
+    {
+        name: 'Pizza Pizza',
+        price: 10,
+        category: 'Entree',
+        popularity: 9.5,
+        rating: 8.7,
+        tags: ['Kids', 'Fresh Cheese', 'Non GMO'],
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -104,10 +122,8 @@
 */
 
 //CODE HERE
-
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
-
+const filteredFood = foodArr.filter(element => element.tags === 'Kids');
+console.log(filteredFood) 
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -149,7 +165,9 @@
 */
 
 //CODE HERE
-
+const filterByProperty = foodArr.filter(function(property, number, type){
+    return String(property.rating) > 6;
+})
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +177,4 @@
 */
 
 //CODE HERE
+console.log(pr)
