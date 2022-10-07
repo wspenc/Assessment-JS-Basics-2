@@ -53,14 +53,14 @@ let greetUser = (username) => {
 //CODE HERE
 function canWeDeliver(zipCode) {
     for (let i = 0; i < deliveryAreaZipCodes.length; i++){
-    if(zipCode[i] === deliveryAreaZipCodes){
+    if(zipCode === deliveryAreaZipCodes[i]){
         return `You're in our delivery zone!`
-    }else{
-        return `Sorry, we can't deliver to that address`
-    }
+}
+return `Sorry, we can't deliver to that address`
 }
 }
 //console.log(canWeDeliver(85205))
+
 
 /* 
     Problem 2 Continued
@@ -80,16 +80,15 @@ function canWeDeliver(zipCode) {
 */
 
 // CODE HERE
-function canWeDeliverTwo(zipCode) {
-    for (let i = 0; i < deliveryAreaZipCodes.length; i++){
-    if(zipCode.includes[i] === deliveryAreaZipCodes){
-        return `You're in our delivery zone!`
+function canWeDeliverTwo (zipCode){
+    if(deliveryAreaZipCodes.includes(zipCode)) {
+        return 'You are in our delivery zone';
     }else{
-        return `Sorry, we can't deliver to that address`
+        return `Sorry, we can't deliver to that address`;
     }
 }
-}
 //console.log(canWeDeliverTwo(85205))
+
 
 
 //////////////////PROBLEM 3////////////////////
@@ -106,11 +105,11 @@ function canWeDeliverTwo(zipCode) {
 */
 
 const deals = [
-    {
+    {//array 0
         title: '15% Off!', 
         desc: 'Applied to your entire order when you spend $30 or more'
     }, 
-    {
+    {//array 1
         title: 'Free Kids Meal with 2 Regular Entrees', 
         desc: '   This deal lasts until the end of March! '
     }
@@ -126,9 +125,12 @@ const deals = [
 */
 
 //CODE HERE
-// let {title} = deals;
-// const newDeal = title.replace('15', '10')
-// //console.log(newDeal)
+let {title} = deals;
+const newDeal = title.replace('15', '10')
+console.log(newDeal)
+//correct answer
+deals[0].title = deals[0].title.replace('15', '10')
+console.log(deals);
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -147,3 +149,8 @@ let {desc} = deals;
 const familyDeal = desc.replace('March', 'April');
 desc.trim()
 console.log(familyDeal)
+
+//correct answer
+deals[1].desc = deals[1].desc.replace('March', 'April').trim();
+console.log(deals);
+
